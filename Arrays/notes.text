@@ -1,0 +1,11 @@
+Declaratin of Array in Java -> dataType arrayName[] = new dataType[size];
+
+examples are,
+int marks[] = new int[50];
+int number[] = {1,3,4,5};
+String fruits = {"apple", "mango", "orange"};
+
+Arrays ka size static hota hai, ek baar apne initialize kar diye toh ap usko change nahi kar sakte.
+
+Passing arrays as arguments
+Arrays jo joto hai that is pass by reference.
