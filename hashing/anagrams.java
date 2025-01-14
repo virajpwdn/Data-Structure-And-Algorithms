@@ -3,8 +3,8 @@ import java.util.HashMap;
 public class anagrams {
     public static void main(String[] args) {
         HashMap<Character, Integer> hm = new HashMap<>();
-        String str = "racec";
-        String str2 = "carea";
+        String str = "tulip";
+        String str2 = "lipid";
         Boolean check;
         int count = 0;
 
