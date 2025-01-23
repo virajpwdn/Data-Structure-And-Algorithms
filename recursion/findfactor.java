@@ -8,17 +8,15 @@ public class findfactor {
         }
         if (n % i == 0) {
             System.out.println(i);
-           if(i != n/i){
-            System.out.println(n/i);
-           }
         }
-        
-
         factors(n, i + 1);
+        if (n % i == 0 && i != n / i) {
+            System.out.println(n / i);
+        }
     }
 
     public static void main(String[] args) {
-        int n = 25;
+        int n = 36;
         int i = 1;
         // int nsq = Math.sqrt(n);
         factors(n, i);
