@@ -11,7 +11,7 @@ public class primenumberloop {
         return true;
     }
     public static void main(String[] args) {
-        int n = 7;
+        int n = 5;
         System.out.println(isPrime(n));
     }
 }
