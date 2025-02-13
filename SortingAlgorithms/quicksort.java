@@ -3,7 +3,9 @@ package SortingAlgorithms;
 import java.util.Arrays;
 
 public class quicksort {
-
+// Quick sort works on the priniciple of Piviot and Partition -> left side pivout se chote aur right side mai bade elements; 
+// Use quick sort when time is not a concern but space is
+// Use merge sort when time is concern and space is not
     public static void quick(int arr[], int start, int last) {
         if (start < last) {
             int pivotIdx = partation(arr, start, last);
@@ -13,6 +15,7 @@ public class quicksort {
     }
 
     public static int partation(int arr[], int start, int last) {
+        // i index jo hai that will make place for pivot and j pointer will compare elements with pivot
         int pivot = arr[last];
         int i = start - 1;
         for (int j = start; j < last; j++) {
