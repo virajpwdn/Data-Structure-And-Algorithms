@@ -12,8 +12,8 @@ public class LinkedList {
         }
     }
 
-    public static Node head;
-    public static Node tail;
+    public Node head;
+    public Node tail;
     public int size;
 
     public void addFirst(int data) {
@@ -104,17 +104,58 @@ public class LinkedList {
             size--;
             return val;
         }
-        int i=0;
+        int i = 0;
         Node prev = head;
-        while (i < size-2) {
+        while (i < size - 2) {
             prev = prev.next;
             i++;
         }
-        int val = tail.data;  /*-> can also write prev.next.data ==> it point towards tail node */
+        int val = tail.data; /*-> can also write prev.next.data ==> it point towards tail node */
         prev.next = null;
         tail = prev;
         size--;
         return val;
+    }
+
+    public int iterativeSearch(int key) {
+        if (head == null) {
+            return -1;
+        } else if (size == 1) {
+            int val = head.data;
+            if (val == key)
+                return 1;
+            else
+                return -1;
+        }
+
+        Node temp = head;
+        for (int i = 0; i < size; i++) {
+            int val = temp.data;
+            if (val == key)
+                return i;
+            temp = temp.next;
+        }
+        return -1;
+    }
+
+    public int recersiveSearch(Node node, int key, int idx) {
+        if (node == null)
+            return Integer.MIN_VALUE;
+        else if (size == 1) {
+            if (node.data == key)
+                return 0;
+            else
+                return -1;
+        }
+        // Base case
+        if (idx == size) {
+            return -1;
+        }
+
+        if (node.data == key) {
+            return idx;
+        }
+        return recersiveSearch(node.next, key, idx + 1);
     }
 
     public static void main(String[] args) {
@@ -127,8 +168,11 @@ public class LinkedList {
         ll.print();
 
         // ll.removeFirst();
-        ll.removeLast();
+
+        // ll.removeLast();
         ll.print();
-        System.out.println(ll.size);
+        // System.out.println(ll.size);
+        // System.out.println(ll.iterativeSearch(4));
+        System.out.println(ll.recersiveSearch(ll.head,9, 0));
     }
 }
