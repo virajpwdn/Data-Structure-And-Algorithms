@@ -1,6 +1,7 @@
 package linkedList;
 
 public class LinkedList {
+    // Every node is a object
     public class Node {
         int data;
         Node next;
@@ -76,11 +77,11 @@ public class LinkedList {
         temp.next = newNode;
     }
 
-    public int removeFirst(){
-        if(size == 0){
-            System.out.println("LinkedList is empyt!");
+    public int removeFirst() {
+        if (size == 0) {
+            System.out.println("LinkedList is empty!");
             return -1;
-        } else if(size == 1){
+        } else if (size == 1) {
             int val = head.data;
             head = tail = null;
             size = 0;
@@ -93,6 +94,29 @@ public class LinkedList {
         return val;
     }
 
+    public int removeLast() {
+        if (head == null) {
+            System.out.println("LinkedList is empty");
+            return Integer.MIN_VALUE;
+        } else if (size == 1) {
+            int val = head.data; /*-> we can also write val = tail.data ==> because when there is only 1 node in LL that node is only head and tail */
+            head = tail = null;
+            size--;
+            return val;
+        }
+        int i=0;
+        Node prev = head;
+        while (i < size-2) {
+            prev = prev.next;
+            i++;
+        }
+        int val = tail.data;  /*-> can also write prev.next.data ==> it point towards tail node */
+        prev.next = null;
+        tail = prev;
+        size--;
+        return val;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.addFirst(1);
@@ -100,8 +124,10 @@ public class LinkedList {
         ll.addLast(3);
         ll.addLast(4);
         ll.addInMiddle(2, 9);
+        ll.print();
 
-        ll.removeFirst();
+        // ll.removeFirst();
+        ll.removeLast();
         ll.print();
         System.out.println(ll.size);
     }
