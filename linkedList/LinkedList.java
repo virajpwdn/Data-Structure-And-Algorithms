@@ -140,7 +140,7 @@ public class LinkedList {
 
     public int recersiveSearch(Node node, int key, int idx) {
         if (node == null)
-            return Integer.MIN_VALUE;
+            return -1;
         else if (size == 1) {
             if (node.data == key)
                 return 0;
@@ -158,6 +158,33 @@ public class LinkedList {
         return recersiveSearch(node.next, key, idx + 1);
     }
 
+    public int recersiveSearchAnother(Node node, int key){
+        if(node == null) return -1;
+        if(node.data == key) return 0;
+        
+        int idx = recersiveSearchAnother(node.next, key);
+        if(idx != -1){
+            idx = idx + 1;
+        }
+
+        return idx;
+    }
+
+    public void reverseLinkedList(){
+        
+        Node curr = tail = head;
+        Node prev = null;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.addFirst(1);
@@ -169,12 +196,15 @@ public class LinkedList {
         ll.addInMiddle(2, 9);
         ll.print();
 
-        ll.removeFirst();
+        // ll.removeFirst();
 
-        ll.removeLast();
+        // ll.removeLast();
+        // ll.print();
+        // System.out.println(ll.size);
+        // System.out.println(ll.iterativeSearch(4));
+        // System.out.println(ll.recersiveSearch(ll.head,9, 0));
+        // System.out.println(ll.recersiveSearchAnother(ll.head, 8));
+        ll.reverseLinkedList();
         ll.print();
-        System.out.println(ll.size);
-        System.out.println(ll.iterativeSearch(4));
-        System.out.println(ll.recersiveSearch(ll.head,9, 0));
     }
 }
