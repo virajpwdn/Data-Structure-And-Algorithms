@@ -164,15 +164,17 @@ public class LinkedList {
         ll.addFirst(2);
         ll.addLast(3);
         ll.addLast(4);
+        ll.addFirst(12);
+        ll.addInMiddle(4, 8);
         ll.addInMiddle(2, 9);
         ll.print();
 
-        // ll.removeFirst();
+        ll.removeFirst();
 
-        // ll.removeLast();
+        ll.removeLast();
         ll.print();
-        // System.out.println(ll.size);
-        // System.out.println(ll.iterativeSearch(4));
+        System.out.println(ll.size);
+        System.out.println(ll.iterativeSearch(4));
         System.out.println(ll.recersiveSearch(ll.head,9, 0));
     }
 }
