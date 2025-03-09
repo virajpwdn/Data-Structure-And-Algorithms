@@ -1,5 +1,6 @@
 package linkedList;
 
+
 public class NewLinkedList {
     public class Node {
         int data;
@@ -155,6 +156,19 @@ public class NewLinkedList {
             temp = temp.next;
         }
         System.out.println("null");
+    }
+
+    public Node middleNode(Node head) {
+        if(head == null){
+            return head;
+        }
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 
     public static void main(String[] args) {
