@@ -1,6 +1,5 @@
 package linkedList;
 
-
 public class NewLinkedList {
     public class Node {
         int data;
@@ -99,7 +98,7 @@ public class NewLinkedList {
             addFirst(data);
             return;
         }
-        
+
         Node newNode = new Node(data);
         Node temp = head;
         for (int i = 0; i < idx - 1; i++) {
@@ -111,32 +110,32 @@ public class NewLinkedList {
         size++;
     }
 
-    public int deleteBetween(int idx){
-        if(idx > size || idx < 0){
+    public int deleteBetween(int idx) {
+        if (idx > size || idx < 0) {
             System.out.println("Invalid Index");
             return -1;
         }
-        if(head == null){
+        if (head == null) {
             System.out.println("LinkedList is empty");
             return -1;
-        } else if(size == 1){
-            if(idx == size){
+        } else if (size == 1) {
+            if (idx == size) {
                 int val = head.data;
                 head = tail = null;
-                size --;
+                size--;
                 return val;
-            }else{
+            } else {
                 System.out.println("Invalid Index");
                 return -1;
             }
         }
-        if(idx == 0){
+        if (idx == 0) {
             int val = head.data;
             removeFirst();
             return val;
         }
         Node temp = head;
-        for (int i = 0; i < idx-1; i++) {
+        for (int i = 0; i < idx - 1; i++) {
             temp = temp.next;
         }
         int val = temp.data;
@@ -159,16 +158,34 @@ public class NewLinkedList {
     }
 
     public Node middleNode(Node head) {
-        if(head == null){
+        if (head == null) {
             return head;
         }
         Node slow = head;
         Node fast = head;
-        while(fast != null && fast.next != null){
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
         return slow;
+    }
+
+    public boolean hasCycle(Node head) {
+        if (head == null || head.next == null)
+            return false;
+
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (fast == slow) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public static void main(String[] args) {
