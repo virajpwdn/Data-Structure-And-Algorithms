@@ -71,8 +71,6 @@ public class stackusinglinkedlist {
         sk.push(3);
         sk.push(4);
 
-        // sk.pop();
-        // System.out.println(sk.peek());
 
         sk.display();
         System.out.println(sk.size);
