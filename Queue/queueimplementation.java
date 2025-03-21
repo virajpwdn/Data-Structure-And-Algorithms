@@ -56,6 +56,8 @@ public class queueimplementation {
         q.enqueue(8);
         q.enqueue(5);
         q.enqueue(4);
+        q.enqueue(3);
+        q.enqueue(2);
 
         // System.out.println(q.peek());
         // System.out.println(q.dequeue());
