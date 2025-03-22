@@ -12,7 +12,7 @@ public class Student {
     }
 
     Student(){
-        
+
     }
 
     
@@ -38,7 +38,7 @@ public class Student {
         System.out.println(newStudent2.name);
         System.out.println(newStudent2.age);
         System.out.println(newStudent2.marks);
-
+        int num = 10;
         // creating new student and assigining details with constructor
         Student newStudent3 = new Student("phillips", 20, 96.14f);
         System.out.println(newStudent3.name);
