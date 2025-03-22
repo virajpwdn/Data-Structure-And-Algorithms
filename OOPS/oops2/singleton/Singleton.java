@@ -18,3 +18,5 @@ public class Singleton {
         return instance;
     }
 }
+
+// Multi-Level Inheritance is not supported in java
