@@ -1,4 +1,4 @@
-package oops3.Inheritance;
+package Inheritance;
 
 public class Sportscar extends Car {
     String type;

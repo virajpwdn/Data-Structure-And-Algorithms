@@ -1,6 +1,8 @@
-package oops3.Inheritance;
+package Inheritance;
 
-public class Car {
+import Bank.Credit;
+
+public class Car extends Credit {k
     String name;
     int price;
     int speed;

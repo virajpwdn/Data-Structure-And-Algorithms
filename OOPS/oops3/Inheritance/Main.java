@@ -1,4 +1,4 @@
-package oops3.Inheritance;
+package Inheritance;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,6 +8,7 @@ public class Main {
 
         Car car5 = new Sportscar("Luxury", 1000000000, 200, "Rolls Royce");
 
-        System.out.println(car5.name);
+        // System.out.println(car5.name);
+        
     }
 }
