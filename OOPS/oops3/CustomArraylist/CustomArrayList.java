@@ -1,12 +1,16 @@
 package CustomArraylist;
 
 public class CustomArrayList {
-    private static int data[];
-    private static int DEFAULT_SIZE = 10;
-    static int size = 0;
+    private int data[];
+    private static final int DEFAULT_SIZE = 10;
+    int size = 0;
 
-    CustomArrayList() {
-        data = new int[DEFAULT_SIZE];
+    public CustomArrayList() {
+        this.data = new int[DEFAULT_SIZE];
+    }
+
+    public int size() {
+        return data.length;
     }
 
     public void add(int val) {
@@ -20,25 +24,32 @@ public class CustomArrayList {
         data[size++] = val;
     }
 
-    public boolean isFull(){
+    public boolean isFull() {
         return data.length == size;
     }
 
-    public int get(int idx){
+    public int get(int idx) {
         return data[idx];
     }
 
-    public int remove(){
+    public int remove() {
         int remove = data[size--];
         return remove;
     }
 
-    public int remove(int idx){
+    public int remove(int idx) {
         int toDelete = data[idx];
-        for (int i = 0; i < idx - 1; i++) {
-            
+        int i = idx;
+        int j = idx + 1;
+        
+
+        while (j < size) {
+            data[i++] = data[j++];
         }
 
+        size--;
+        data[size] = 0;
         return toDelete;
     }
+
 }
