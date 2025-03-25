@@ -3,14 +3,14 @@ package CustomArraylist;
 public class CustomArrayList {
     private int data[];
     private static final int DEFAULT_SIZE = 10;
-    int size = 0;
+    int size;
 
     public CustomArrayList() {
         this.data = new int[DEFAULT_SIZE];
     }
 
     public int size() {
-        return data.length;
+        return size;
     }
 
     public void add(int val) {
@@ -33,18 +33,17 @@ public class CustomArrayList {
     }
 
     public int remove() {
-        int remove = data[size--];
+        int remove = data[size-1];
+        size--;
+        data[size] = 0;
         return remove;
     }
 
     public int remove(int idx) {
         int toDelete = data[idx];
-        int i = idx;
-        int j = idx + 1;
-        
 
-        while (j < size) {
-            data[i++] = data[j++];
+        for (int i = idx; i < size-1; i++) {
+            data[i] = data[i + 1];
         }
 
         size--;

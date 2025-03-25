@@ -13,6 +13,7 @@ public class Main {
         list.add(9);
         list.add(10);
         list.add(11);
+        list.add(11);
        
 
         list.remove();
@@ -23,5 +24,7 @@ public class Main {
             System.out.print(list.get(i) + "  ");
         }
         System.out.println();
+        
+        System.out.println(list.get(4));
     }
 }
