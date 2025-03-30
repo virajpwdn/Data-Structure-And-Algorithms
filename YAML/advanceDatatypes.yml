@@ -1,0 +1,36 @@
+nested data:
+  - hey
+  - hello
+    - hi
+    -hola
+    -null 
+  - yolo
+
+  #key value pairs are called maps
+  !!map
+
+  # Nested maps can be created
+
+  # Pairs can have duplicate values they are converted into array
+  pair example: !!pairs
+    - job: student
+    - job: teacher
+
+  # The above example can also be written like this
+  Pair example: !!pairs [job: student, job: teacher]
+
+# we can reuse some properties using anchor
+likings: &likes
+ - favFruit: mango
+ - favChocolate: dark
+
+person1:
+ - name: abc
+ <<: * likes
+
+#  while reusing we if want to override some properties we can do it
+person2: 
+ - name: def
+ <<: * likes
+ favChocolate: sweet
+ 

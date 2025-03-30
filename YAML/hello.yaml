@@ -1,0 +1,44 @@
+# YAML is a data serialization language
+# object -> serializer -> converts into streams 
+# This Streams of buffer are given to YAML file, database, memory
+
+# Benefits of YAML file
+# 1. Easy to write and understand
+# 2. Strict typed language
+# 3. Many languages supports yml
+# 4. Easy to convert in JSON and XML
+# 5. More powerful when representating data
+
+# In YAML there are 3 ways to write strings
+
+text: this is a string
+data: "This is a string"
+type2: 'This is also a string'
+
+# write single line in multiple lines
+message: > 
+this will all be in one single line
+
+#same as this
+message: this will all be in one single line
+message: !!str  "this will all be in one single line"
+
+
+
+# YAML automatically detects what type of data type it is
+number: 9890
+marks: 99.98
+booleanValue: !!bool No
+
+
+# There are also data types in yml
+# To declare integers
+
+integer: !!int 1
+binaryNum: !!int 0b11001
+commaValue: !!int +540_0000000000000
+
+# Floating values
+floatMarks: !!float 95.90
+infinite: !!float inf
+not a number: nan
