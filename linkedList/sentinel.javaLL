@@ -1,0 +1,53 @@
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        if(head == null) {
+            return head;
+        }
+        else if(head.next == null && n == 1) {
+            head = null;
+            return head;
+        }
+        ListNode sentinel = new ListNode();
+        sentinel.next = head;
+        
+        ListNode first = sentinel;
+        ListNode second = head;
+
+        while(n > 1) {
+            second = second.next;
+            n--;
+        }
+        n = n + 1;
+        while(second != null && second.next != null) {
+            first = first.next;
+            second = second.next;
+        }
+
+        first.next = first.next.next;
+
+        return sentinel.next;
+    }
+
+        // if(head == null) return head;
+        // if(head.next == null && n == 1) return head.next;
+
+        // ListNode sentinel = new ListNode();
+        // sentinel.next = head;
+
+        // int length = 0;
+        // ListNode temp = head;
+        
+        // while(temp != null) {
+        //     temp = temp.next;
+        //     length++;
+        // }
+
+        // int traverse = (length - n);
+        // temp = sentinel;
+        // for (int i=0; i<traverse; i++) {
+        //     temp = temp.next;
+        // }
+        // temp.next = temp.next.next;
+        
+        // return sentinel.next;
+}
