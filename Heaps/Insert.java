@@ -154,6 +154,11 @@ class Heap {
             this.length--;
             heapifyDown(0);
         }
+
+        public int peek() {
+            if(length == 0) return -1;
+            return list.get(0);
+        }
 }
 
 class Main {
